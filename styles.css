@@ -215,16 +215,16 @@ section {
 .artist-list {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 96px;
 }
 
 .artist-item {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
-  gap: 64px;
+  gap: 72px;
   align-items: start;
   max-width: 860px;
-  padding-top: 64px;
+  padding-top: 84px;
   border-top: 1px solid var(--border-color);
 }
 
@@ -237,11 +237,25 @@ section {
   max-width: 620px;
 }
 
+.artist-name {
+  font-size: clamp(34px, 4vw, 43px);
+  line-height: 1.16;
+  margin-bottom: 18px;
+}
+
+.artist-bio {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
 .artist-details {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin: 26px 0 0;
+  gap: 22px;
+  margin: 36px 0 0;
 }
 
 .artist-details div {
@@ -262,6 +276,18 @@ section {
   color: var(--text-body);
   font-size: 16px;
   line-height: 1.7;
+}
+
+.artist-link {
+  color: var(--text-heading);
+  font-size: 15px;
+  text-decoration: underline;
+  text-decoration-color: #d0d0d0;
+  text-underline-offset: 5px;
+}
+
+.artist-link:hover {
+  text-decoration-color: var(--text-heading);
 }
 
 .artist-photo-slot {
@@ -495,8 +521,12 @@ ul.minimal-list li::before {
 
   .artist-item {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 54px;
+    gap: 34px;
+    padding-top: 72px;
+  }
+
+  .artist-name {
+    font-size: 34px;
   }
 
   .artist-photo-slot {
