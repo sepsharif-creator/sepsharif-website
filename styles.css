@@ -25,6 +25,7 @@ body {
 
 a {
   color: inherit;
+  font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s ease, color 0.2s ease;
 }
