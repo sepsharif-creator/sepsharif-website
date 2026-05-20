@@ -211,6 +211,66 @@ section {
   color: var(--text-muted);
 }
 
+/* Artists */
+.artist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.artist-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+  gap: 64px;
+  align-items: start;
+  max-width: 860px;
+  padding-top: 64px;
+  border-top: 1px solid var(--border-color);
+}
+
+.artist-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.artist-copy {
+  max-width: 620px;
+}
+
+.artist-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 26px 0 0;
+}
+
+.artist-details div {
+  max-width: 620px;
+}
+
+.artist-details dt {
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.artist-details dd {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.artist-photo-slot {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--border-color);
+  background: #f4f4f4;
+}
+
 /* Publications */
 .pub-list {
   display: flex;
@@ -431,6 +491,16 @@ ul.minimal-list li::before {
 
   .section-image {
     margin: 0;
+  }
+
+  .artist-item {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 54px;
+  }
+
+  .artist-photo-slot {
+    max-width: 300px;
   }
 
   .note-list {
