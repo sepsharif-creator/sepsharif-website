@@ -22,3 +22,34 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+const backToTopButton = document.querySelector("[data-back-to-top]");
+
+if (backToTopButton) {
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let ticking = false;
+
+  const updateBackToTopVisibility = () => {
+    const shouldShow = window.scrollY > 400;
+    backToTopButton.classList.toggle("is-visible", shouldShow);
+    backToTopButton.tabIndex = shouldShow ? 0 : -1;
+    ticking = false;
+  };
+
+  const handleScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateBackToTopVisibility);
+      ticking = true;
+    }
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotionQuery.matches ? "auto" : "smooth",
+    });
+  });
+
+  updateBackToTopVisibility();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+}
