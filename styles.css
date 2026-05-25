@@ -215,7 +215,7 @@ section {
 .artist-list {
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 118px;
 }
 
 .artist-item {
@@ -295,6 +295,61 @@ section {
   aspect-ratio: 4 / 5;
   border: 1px solid var(--border-color);
   background: #f4f4f4;
+}
+
+.artist-featured {
+  display: block;
+  max-width: 100%;
+}
+
+.artist-featured-intro {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.86fr) minmax(0, 1.14fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.artist-featured-copy {
+  padding-top: 10px;
+}
+
+.artist-featured .artist-name {
+  font-size: clamp(42px, 5vw, 54px);
+  margin-bottom: 22px;
+}
+
+.artist-portrait img,
+.artist-performance-image img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.artist-performance-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 28px;
+  margin-top: 78px;
+}
+
+.artist-performance-large {
+  grid-column: 1 / 11;
+}
+
+.artist-performance-small {
+  grid-column: 1 / 6;
+}
+
+.artist-performance-offset {
+  grid-column: 6 / 13;
+  margin-top: 52px;
+}
+
+.artist-performance-image img {
+  object-fit: cover;
+}
+
+.artist-placeholder {
+  max-width: 860px;
 }
 
 /* Publications */
@@ -487,13 +542,11 @@ ul.minimal-list {
   padding: 0;
   margin: 0;
 }
-
 ul.minimal-list li {
   margin-bottom: 14px;
   padding-left: 20px;
   position: relative;
 }
-
 ul.minimal-list li::before {
   content: "—";
   position: absolute;
@@ -570,8 +623,33 @@ ul.minimal-list li::before {
     padding-top: 72px;
   }
 
+  .artist-list {
+    gap: 88px;
+  }
+
   .artist-name {
     font-size: 34px;
+  }
+
+  .artist-featured-intro,
+  .artist-performance-gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .artist-featured .artist-name {
+    font-size: 38px;
+  }
+
+  .artist-portrait {
+    max-width: 360px;
+  }
+
+  .artist-performance-large,
+  .artist-performance-small,
+  .artist-performance-offset {
+    grid-column: auto;
+    margin-top: 0;
   }
 
   .artist-photo-slot {
