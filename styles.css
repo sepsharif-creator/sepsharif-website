@@ -320,8 +320,12 @@ section {
 
 .artist-portrait img,
 .artist-performance-image img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 3px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .artist-performance-gallery {
@@ -342,10 +346,6 @@ section {
 .artist-performance-offset {
   grid-column: 6 / 13;
   margin-top: 52px;
-}
-
-.artist-performance-image img {
-  object-fit: cover;
 }
 
 .artist-placeholder {
@@ -542,11 +542,13 @@ ul.minimal-list {
   padding: 0;
   margin: 0;
 }
+
 ul.minimal-list li {
   margin-bottom: 14px;
   padding-left: 20px;
   position: relative;
 }
+
 ul.minimal-list li::before {
   content: "—";
   position: absolute;
