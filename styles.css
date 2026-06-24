@@ -318,20 +318,43 @@ section {
   margin-bottom: 22px;
 }
 
-.artist-portrait img,
-.artist-performance-image img {
+.artist-image-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.artist-image-frame {
+  width: 100%;
+  overflow: hidden;
+  background: #f4f4f2;
+  border-radius: 3px;
+}
+
+.artist-image-frame img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 3px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
+.artist-image-portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.artist-image-featured {
+  aspect-ratio: 4 / 3;
+}
+
+.artist-image-supporting {
+  aspect-ratio: 3 / 2;
+}
+
 .artist-performance-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 28px;
+  align-items: start;
   margin-top: 78px;
 }
 
@@ -396,10 +419,11 @@ section {
 }
 
 .image-credit {
-  margin-top: 10px;
-  font-size: 13px;
+  margin: 10px 0 0;
+  font-size: 12.5px;
   line-height: 1.5;
   color: var(--text-muted);
+  text-align: left;
 }
 
 .section-image {
