@@ -317,6 +317,19 @@ section {
   object-position: center;
 }
 
+@media (max-width: 700px) {
+  .artist-item {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-top: 72px;
+    margin-top: 72px;
+  }
+
+  .artist-row-text-only {
+    max-width: 100%;
+  }
+}
+
 /* Publications */
 .pub-list {
   display: flex;
